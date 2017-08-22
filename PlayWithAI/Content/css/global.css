@@ -1,0 +1,9 @@
+﻿.texture-crossword {
+    background: url('../img/crossword.png') !important;
+    background-repeat: repeat;
+}
+
+.texture-playstation {
+    background: url('../img/playstation-pattern.png') !important;
+    background-repeat: repeat;
+}

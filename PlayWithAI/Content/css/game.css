@@ -1,0 +1,16 @@
+﻿.table {
+    /* Resets Bootstrap style */
+    width:initial;
+}
+
+#game-board {
+    margin:auto;
+    background-color:white;
+}
+
+#game-board tr td {
+    height:110px;
+    width:110px;
+    vertical-align:middle;
+    text-align:center;
+}
