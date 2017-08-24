@@ -7,9 +7,9 @@ using PlayWithAI.Models;
 
 namespace PlayWithAI.Controllers
 {
-    public class GameController : Controller
+    public class TicTacToeController : Controller
     {
-        // GET: Game
+        // GET: TicTacToe
         public ActionResult Index()
         {
             if (Session["size"] == null)
@@ -21,8 +21,23 @@ namespace PlayWithAI.Controllers
                 int size = (Int32) Session["size"];
                 GameViewModel model = new GameViewModel(size);
 
+                // put game state in session
+                // Game begins with O
+                Session["state"] = new TicTacToeGameState(size, false);
+
                 return View(model);
             }
+        }
+
+        [HttpPost]
+        public ActionResult Index(int row, int col)
+        {
+
+            TicTacToeGameState state = (TicTacToeGameState) Session["state"];
+
+            state.addMove(row, col);
+
+            return null;
         }
     }
 }

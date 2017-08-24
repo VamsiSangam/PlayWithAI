@@ -20,7 +20,7 @@ namespace PlayWithAI.Controllers
             Session["size"] = Int32.Parse(size);
             Session["difficulty"] = Int32.Parse(difficulty);
 
-            return RedirectToAction("Index", "Game");
+            return RedirectToAction("Index", "TicTacToe");
         }
     }
 }

@@ -34,7 +34,19 @@ $(document).ready(function () {
             if (!block.hasClass('marked')) {
                 block.addClass('marked');
                 isXsTurn = !isXsTurn;
+                getBotMove(block.prop('data-row'), block.prop('data-col'));
             }
         }
     });
 });
+
+function getBotMove(row, col) {
+    $.post('/TicTacToe', {
+        row: row,
+        col: col,
+    }, getBotMoveCallback);
+}
+
+function getBotMoveCallback(data) {
+    alert('inside callback');
+}
